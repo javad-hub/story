@@ -1,0 +1,27 @@
+{% load static%}
+<html>
+    <link rel="stylesheet" href="{% static 'base.css'%}">
+    <meta charset="utf-8">
+    <title>{% block title%}Home{% endblock title%}</title>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1, shrink-to-fit=no">
+    {% if user.is_authenticated%}
+    <div class='topnav'>
+        <a href="{% url 'home'%}">Home</a> 
+        <a href="#">About us</a> 
+        <a href="{% url 'storieslist'%}">Stories</a> 
+        <a href="{% url 'logout'%}">Log out</a>
+    </div>
+    {% else%}
+    <div class='topnav'>
+        <a href="{% url 'home'%}">Home</a> 
+        <a href="#">About us</a> 
+        <a href="{% url 'storieslist'%}">Stories</a> 
+        <a href="{% url 'login'%}">Log in</a>
+        <a href="{% url 'signup'%}">Sign up</a>
+    </div>
+</html>
+{% endif%}
+
+{% block content%}
+{% endblock content%}

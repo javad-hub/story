@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content%}
+<link rel="stylesheet" href="{% static 'home.css'%}">
+{% if user.is_authenticated%}
+<header>
+    <h1>welcome</h1>
+    <p>Hi {{user.username}}!</p>
+</header>
+{% else%}
+<header>
+    <h1>welcome</h1>
+    <p>You are not logged in!</p>
+</header>
+{% endif%}
+{% endblock content%}

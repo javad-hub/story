@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block title%}Stories{% endblock title%}
+{% block content%}
+<link rel="stylesheet" href="{% static 'storieslist.css'%}">
+<header>
+    <h1>Stories</h1>
+</header>
+{% for story in object_list%}
+<ul>
+    <li>
+        <p>{{story.topic}}</p>
+        <p>{{story.text}}</p>
+        <p>{{story.author}}</p>
+        <p>{{story.date}}</p>
+    </li>
+</ul>
+{% endfor%}
+{% endblock content%}
